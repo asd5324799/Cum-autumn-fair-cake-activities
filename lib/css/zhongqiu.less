@@ -1,0 +1,651 @@
+@rem: 0.0267rem;
+.backImage(@name) {
+  background-image: url("../images/@{name}.png");
+  @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+    background-image: url("../images/@{name}@2x.png"); 
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url("../images/@{name}@3x.png");
+  }
+}
+
+body {
+  .backImage(zhongqiubackground);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+/* main-page */
+.main-page {
+  position: relative;
+  display: block;
+  font-size: 12*@rem;
+  overflow: hidden;
+  &.show {
+    display: none;  
+  }
+  /* active-explain */
+  .active-explain {
+    position: absolute;
+    top: 10*@rem;
+    right: 10*@rem;
+    width: 75*@rem;
+    height: 30*@rem;
+    text-align: center;
+    line-height: 30*@rem;
+    border-radius: 3px;
+    background: #ffffff;
+    font-size: 14*@rem;
+    color: #000;
+  }
+  /* account-information */
+  .account-information {
+    display: flex;
+    height: 56*@rem;
+    margin: 195*@rem 10*@rem 70*@rem;
+    padding: 0 10*@rem;
+    line-height: 56*@rem;
+    border: 1px solid RGBA(3, 34, 88, 1);
+    border-radius: 3px;
+    background-color: RGBA(53, 141, 241, .6);
+    font-size: 15px;
+    color: #ffffff;
+    box-shadow: 0 0 0 2px RGBA(53, 141, 241, .6);
+    .content {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &.left {
+        flex: 0 0 45%;
+        flex: 1;
+      }
+      &.center {
+        flex: 0 0 35%;
+        flex: 1;
+        text-align: center;
+        .point {
+          color: RGBA(253, 192, 39, 1);
+        }
+      }
+      &.right {
+        flex: 0 0 20%;
+        text-align: right;
+      } 
+    }
+    .avatar {
+      float: left;
+      display: block;
+      width: 40*@rem;
+      height: 40*@rem;
+      margin-top: 8*@rem;
+      margin-right: 10*@rem;
+      border-radius: 50%;
+      background-color: RGBA(3, 34, 88, 1);
+      overflow: hidden;
+    }
+  }
+  /* game */
+  .game {
+    position: relative;
+    width: 300px;
+    margin: 0 auto 15*@rem;
+    .bowl {
+      width: 100%;
+    }
+    .dice {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background-image: url(../images/dice.png);
+      background-repeat: no-repeat;
+      background-size: 50px;
+      overflow: hidden;
+      &.first {
+        top: 90px;
+        left: 80px;
+        background-position: 0 0;
+        animation: rotateAnimation1 .4s linear;
+      }
+      &.second {
+        top: 80px;
+        left: 140px;
+        background-position: 0 -52px;
+        animation: rotateAnimation2 .4s linear;
+      }
+      &.third {
+        top: 132px;
+        left: 116px;
+        background-position: 0 -104px;
+        animation: rotateAnimation3 .4s linear;
+      }
+      &.fourth {
+        top: 126px;
+        left: 180px;
+        background-position: 0 -156px;
+        animation: rotateAnimation4 .4s linear;
+      }
+      &.fifth {
+        top: 190px;
+        left: 108px;
+        background-position: 0 -208px;
+        animation: rotateAnimation5 .4s linear;
+      }
+      &.sixth {
+        top: 182px;
+        left: 164px;
+        background-position: 0 -260px;
+        animation: rotateAnimation6 .4s linear;
+      }
+      &.one {
+        background-position: 0 0;
+      }
+      &.two {
+        background-position: 0 -52px;
+      }
+      &.three {
+        background-position: 0 -104px;
+      }
+      &.four {
+        background-position: 0 -156px;
+      }
+      &.five {
+        background-position: 0 -208px;
+      }
+      &.six {
+        background-position: 0 -260px;
+      }
+      &.frame1 {
+        background-position: 0 -316px;
+      }
+      &.frame2 {
+        background-position: 0 -368px;
+      }
+      &.frame3 {
+        background-position: 0 -420px;
+      }
+    }
+  }
+  /* button-list */
+  .button-list {
+    overflow: hidden;
+    .start {
+      width: 160*@rem;
+      height: 45*@rem;
+      margin: 0 auto;
+      line-height: 45*@rem;
+      text-align: center;
+      border-radius: 23px;
+      background: linear-gradient(RGBA(245, 170, 0, 1), RGBA(250, 188, 0, 1));
+      font-size: 20*@rem;
+      color: #ffffff;
+      box-shadow: 0px 0px 3px 1px RGBA(105, 82, 23, 0.54); 
+    }
+    .text {
+      margin: 10*@rem 0 15*@rem;
+      text-align: center;
+      font-size: 14*@rem;
+      color: #ffffff;
+      span {
+        color: RGBA(249, 79, 87, 1);
+      }
+    }
+    .button {
+      width: 115*@rem;
+      height: 40*@rem;
+      text-align: center;
+      line-height: 40*@rem;
+      border-radius: 5px;
+      font-size: 17*@rem;
+      color: #ffffff;
+    }
+    .left {
+      float: left;
+      margin-left: 36*@rem;
+      background: RGBA(184, 28, 35, 1);
+      border: 1px solid RGBA(64, 8, 11, 1);
+    }
+    .right {
+      float: right;
+      margin-right: 36*@rem;
+      background: RGBA(236, 172, 20, 1);
+      border: 1px solid RGBA(162, 118, 12, 1);
+    }
+  }
+  /* rank-record */
+  .rank-record {
+    position: relative;
+    margin: 15*@rem 10*@rem 0;
+    padding: 0 10*@rem;
+    border: 1px solid RGBA(3, 34, 88, 1);
+    border-radius: 3px;
+    background-color: RGBA(53, 141, 241, .4);
+    font-size: 15px;
+    color: #ffffff;
+    box-shadow: 0 0 0 2px RGBA(53, 141, 241, .6);
+    .title {
+      height: 30*@rem;
+      margin-top: 10*@rem;
+      overflow: hidden;
+      .left {
+        float: left;  
+        line-height: 30*@rem;
+        font-size: 17*@rem;
+      }
+      .right {
+        display: block;
+        float: right;
+        box-sizing: border-box;
+        width: 80*@rem;
+        height: 30*@rem;
+        text-align: center;
+        line-height: 30*@rem;
+        border: 1px solid RGBA(80, 146, 233, 1);
+        border-radius: 3px;
+        font-size: 15*@rem;
+        color: #ffffff;
+        background: RGBA(119, 166, 229, 1);
+      }
+    }
+    .rank-list {
+      max-height: 350*@rem;
+      overflow-y: scroll;
+      .rank-item {
+        display: flex;
+        box-sizing: border-box;
+        padding: 15*@rem 0;
+        height: 70*@rem;
+        line-height: 40*@rem;
+        border-bottom: 1px dashed RGBA(57, 109, 178, 1);
+        font-size: 15*@rem;
+        .content {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &.left {
+            flex: 0 0 48%;
+            margin-right: 2%;
+          }
+          &.center {
+            flex: 0 0 30%;
+            text-align: left;
+            color: RGBA(249, 79, 87, 1);
+          }
+          &.right {
+            flex: 0 0 20%;
+            text-align: right;
+          } 
+        }
+        .avatar {
+          float: left;
+          display: block;
+          width: 40*@rem;
+          height: 40*@rem;
+          margin-right: 10*@rem;
+          border-radius: 50%;
+          background-color: RGBA(3, 34, 88, 1);
+          overflow: hidden;
+        }
+      }
+    }
+    .empty {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100*@rem;
+      height: 16*@rem;
+      margin: auto;
+    }
+  }
+  /* footer */
+  .footer {
+    margin: 15*@rem 10*@rem 30*@rem 10*@rem;
+    font-size: 14*@rem;
+    color: #ffffff;
+  }
+}
+/* modal */
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+/* page */
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  border: 3px solid RGBA(234, 200, 165, 1);
+  border-radius: 9px;
+  background: RGBA(254, 240, 213, 1);
+}
+/* rank-page */
+.rank-page {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 345*@rem;
+  height: 500*@rem;
+  margin: auto;
+  &.show {
+    display: block;
+  }
+  .wrapper {
+    border: 3px solid RGBA(234, 200, 165, 1);
+    border-radius: 9px;
+    background: RGBA(254, 240, 213, 1);
+    .header {
+      position: relative;
+      height: 45*@rem;
+      text-align: center;
+      line-height: 45*@rem;
+      font-size: 18*@rem;
+      font-weight: bolder;
+      .rank {
+        display: inline-block;
+        width: 32*@rem;
+        height: 32*@rem;
+        margin-right: 8*@rem;
+        vertical-align: middle;
+        .backImage(rank);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .icon {
+        position: absolute;
+        top: 10*@rem;
+        right: 10*@rem;
+        display: block;
+        width: 24*@rem;
+        height: 24*@rem;
+        .backImage(close);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+    }
+    .main {
+      .title {
+        display: flex;
+        padding: 15*@rem 10*@rem;
+        font-size: 14*@rem;
+        .rank {
+          flex: 0 0 15%;
+          text-align: center;
+        }
+        .user {
+          flex: 0 0 60%;
+          box-sizing: border-box;
+          padding-left: 10%;
+          text-align: center;
+        }
+        .point {
+          flex: 0 0 25%;
+          text-align: center;
+        }
+      }
+      .rank-list {
+        max-height: 334*@rem;
+        padding: 0 10*@rem;
+        font-size: 14*@rem;
+        overflow: scroll;
+        .rank-item {
+          display: flex;
+          box-sizing: border-box;
+          padding: 15*@rem 0;
+          height: 70*@rem;
+          line-height: 40*@rem;
+          border-bottom: 1px dashed RGBA(57, 109, 178, 1);
+          font-size: 15*@rem;
+          &:first-of-type {
+            padding-top: 0;
+            height: 55*@rem;
+          }
+          .rank {
+            flex: 0 0 15%;
+            text-align: center;
+            color: RGBA(255, 0, 0, 1);
+          }
+          .user {
+            flex: 0 0 60%;
+            text-align: center;
+            .avatar {
+              display: inline-block;
+              width: 40*@rem;
+              height: 40*@rem;
+              margin-right: 10*@rem;
+              border-radius: 50%;
+              overflow: hidden;
+              vertical-align: middle;
+            }
+          }
+          .point {
+            flex: 0 0 25%;
+            text-align: center;
+            color: RGBA(255, 0, 0, 1);
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    height: 40*@rem;
+    margin-top: 3*@rem;
+    padding: 10*@rem;
+    border: 3px solid RGBA(234, 200, 165, 1);
+    border-radius: 9px;
+    background: RGBA(254, 240, 213, 1);
+    font-size: 12*@rem;
+    color: #333;
+    .left-wrapper {
+      float: left;
+      .avatar {
+        float: left;
+        display: block;
+        width: 40*@rem;
+        height: 40*@rem;
+        margin-right: 10*@rem;
+        border: 1px solid #eee;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .content {
+        float: left;
+        .name {
+          margin: 4*@rem 0 2*@rem 0;
+          font-size: 15*@rem;
+        }
+        .point {
+          font-size: 12*@rem;
+          color: RGBA(102, 102, 102, 1);
+          .red {
+            color: RGBA(255, 0, 0, 1);
+          }
+        }
+      }
+    }
+    .right-wrapper {
+      float: right;
+      margin-top: 12*@rem;
+      font-size: 14*@rem;
+      color: RGBA(102, 102, 102, 1);
+      .red {
+        color: RGBA(255, 0, 0, 1);
+      }
+    }
+  }
+}
+/* active-explain-page */
+.active-explain-page {
+  display: none;
+  width: 340*@rem;
+  height: 1090*@rem;
+  margin: 20*@rem 15*@rem;
+  &.show {
+    display: block;
+  }
+  .header {
+    position: relative;
+    height: 45*@rem;
+    text-align: center;
+    line-height: 45*@rem;
+    font-size: 18*@rem;
+    font-weight: bolder;
+    .icon {
+      position: absolute;
+      top: 10*@rem;
+      right: 10*@rem;
+      display: block;
+      width: 24*@rem;
+      height: 24*@rem;
+      .backImage(close);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  .main {
+    margin: 15*@rem;
+    margin-top: 0;
+    line-height: 23*@rem;
+    font-size: 15*@rem;
+    .text {
+      margin-left: 12*@rem;
+      &.last {
+        margin-bottom: 8*@rem;
+      }
+    }
+    .title {
+      margin: 20*@rem auto 10*@rem;
+      text-align: center;
+      font-size: 18*@rem;
+    }
+    .explain {
+      width: 100%;
+      margin-bottom: 10*@rem;
+    }
+    .logo {
+      display: block;
+      width: 120*@rem;
+      height: 35*@rem;
+      margin: 0 auto;
+      .backImage(logo);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+/* point-explain-page */
+.point-explain-page {
+  display: none;
+  height: 420*@rem;
+  width: 345*@rem;
+  margin: auto;
+  &.show {
+    display: block;
+  }
+  .header {
+    position: relative;
+    height: 45*@rem;
+    text-align: center;
+    line-height: 45*@rem;
+    font-size: 18*@rem;
+    font-weight: bolder;
+    .icon {
+      position: absolute;
+      top: 10*@rem;
+      right: 10*@rem;
+      display: block;
+      width: 24*@rem;
+      height: 24*@rem;
+      .backImage(close);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  .main {
+    margin-top: 15*@rem;
+    text-align: center;
+    img {
+      width: 90%;
+    }
+  }
+}
+
+@keyframes rotateAnimation1 {
+  0% {
+    top: 108px;
+    left: 20px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 90px;
+    left: 80px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnimation2 {
+  0% {
+    top: 94px;
+    left: 0px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 80px;
+    left: 140px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnimation3 {
+  0% {
+    top: 132px;
+    left: 0px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 132px;
+    left: 116px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnimation4 {
+  0% {
+    top: 144px;
+    left: 28px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 126px;
+    left: 180px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnimation5 {
+  0% {
+    top: 158px;
+    left: 0px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 190px;
+    left: 108px;
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnimation6 {
+  0% {
+    top: 170px;
+    left: 24px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 182px;
+    left: 164px;
+    transform: rotate(360deg);
+  }
+}
