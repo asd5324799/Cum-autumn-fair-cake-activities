@@ -223,7 +223,7 @@ body {
     }
   }
   /* main */
-  .main {
+  .article {
     margin: 15*@rem;
     margin-top: 0;
     padding: 15*@rem;
@@ -241,6 +241,7 @@ body {
       }
     }
   }
+  /* popup */
   .popup {
     display: none;
     position: absolute;
@@ -261,6 +262,66 @@ body {
     color: #ffffff;
     &.show {
       display: block;
+    }
+  }
+  /* share */
+  .share {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    &.show {
+      display: block;
+    }
+    .container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 290*@rem;
+      height: 175*@rem;
+      margin: auto;
+      border: 1px solid RGBA(234, 200, 165, 1);
+      background: RGBA(254, 240, 213, 1);
+      border-radius: 9px;
+      .header {
+        height: 50*@rem;
+        .icon {
+          position: absolute;
+          top: 10*@rem;
+          right: 10*@rem;
+          display: block;
+          width: 24*@rem;
+          height: 24*@rem;
+          .backImage(close);
+          background-size: 100%;
+          background-repeat: no-repeat; 
+        }
+      }
+      .main {
+        padding: 0 15*@rem;
+        .text {
+          margin-bottom: 20*@rem;
+          line-height: 21*@rem;
+          font-size: 15*@rem;
+          color: RGBA(51, 51, 51, 1);
+        }
+        .button {
+          width: 160*@rem;
+          height: 40*@rem;
+          margin: 0 auto;
+          text-align: center;
+          line-height: 40*@rem;
+          border-radius: 5px;
+          background-color: RGBA(237, 159, 79, 1);
+          font-size: 16*@rem;
+          color: #ffffff;
+        }
+      }
     }
   }
 }
@@ -527,7 +588,7 @@ body {
     padding: 0 10*@rem;
     font-size: 15px;
     .rank-list {
-      max-height: 350*@rem;
+      height: 350*@rem;
       overflow-y: scroll;
       .rank-item {
         display: flex;
@@ -542,28 +603,12 @@ body {
           white-space: nowrap;
           text-overflow: ellipsis;
           &.left {
-            flex: 0 0 48%;
-            margin-right: 2%;
-          }
-          &.center {
-            flex: 0 0 30%;
-            text-align: left;
-            color: RGBA(249, 79, 87, 1);
+            flex: 0 0 50%;
           }
           &.right {
-            flex: 0 0 20%;
+            flex: 0 0 50%;
             text-align: right;
           } 
-        }
-        .avatar {
-          float: left;
-          display: block;
-          width: 40*@rem;
-          height: 40*@rem;
-          margin-right: 10*@rem;
-          border-radius: 50%;
-          background-color: RGBA(3, 34, 88, 1);
-          overflow: hidden;
         }
       }
     }
@@ -573,7 +618,7 @@ body {
       right: 0;
       bottom: 0;
       left: 0;
-      width: 100*@rem;
+      width: 125*@rem;
       height: 16*@rem;
       margin: auto;
       font-size: 15*@rem;

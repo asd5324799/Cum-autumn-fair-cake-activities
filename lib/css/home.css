@@ -25,6 +25,8 @@ body {
   /* game */
   /* button-list */
   /* main */
+  /* popup */
+  /* share */
 }
 .main-page.show {
   display: none;
@@ -223,7 +225,7 @@ body {
   background: #e24f42;
   border: 1px solid #c5372a;
 }
-.main-page .main {
+.main-page .article {
   margin: 0.4005rem;
   margin-top: 0;
   padding: 0.4005rem;
@@ -232,13 +234,13 @@ body {
   border-radius: 5px;
   font-size: 0.4005rem;
 }
-.main-page .main .text {
+.main-page .article .text {
   margin-left: 0.3204rem;
 }
-.main-page .main .text.last {
+.main-page .article .text.last {
   margin-bottom: 0.2136rem;
 }
-.main-page .main .text.red {
+.main-page .article .text.red {
   color: #fe0000;
 }
 .main-page .popup {
@@ -262,6 +264,75 @@ body {
 }
 .main-page .popup.show {
   display: block;
+}
+.main-page .share {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.main-page .share.show {
+  display: block;
+}
+.main-page .share .container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 7.743rem;
+  height: 4.6725rem;
+  margin: auto;
+  border: 1px solid #eac8a5;
+  background: #fef0d5;
+  border-radius: 9px;
+}
+.main-page .share .container .header {
+  height: 1.335rem;
+}
+.main-page .share .container .header .icon {
+  position: absolute;
+  top: 0.267rem;
+  right: 0.267rem;
+  display: block;
+  width: 0.6408rem;
+  height: 0.6408rem;
+  background-image: url("../images/close.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+  .main-page .share .container .header .icon {
+    background-image: url("../images/close@2x.png");
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  .main-page .share .container .header .icon {
+    background-image: url("../images/close@3x.png");
+  }
+}
+.main-page .share .container .main {
+  padding: 0 0.4005rem;
+}
+.main-page .share .container .main .text {
+  margin-bottom: 0.534rem;
+  line-height: 0.5607rem;
+  font-size: 0.4005rem;
+  color: #333333;
+}
+.main-page .share .container .main .button {
+  width: 4.272rem;
+  height: 1.068rem;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.068rem;
+  border-radius: 5px;
+  background-color: #ed9f4f;
+  font-size: 0.4272rem;
+  color: #ffffff;
 }
 /* page */
 .page {
@@ -576,7 +647,7 @@ body {
   font-size: 15px;
 }
 .rank-record-page .rank-record .rank-list {
-  max-height: 9.345rem;
+  height: 9.345rem;
   overflow-y: scroll;
 }
 .rank-record-page .rank-record .rank-list .rank-item {
@@ -594,27 +665,11 @@ body {
   text-overflow: ellipsis;
 }
 .rank-record-page .rank-record .rank-list .rank-item .content.left {
-  flex: 0 0 48%;
-  margin-right: 2%;
-}
-.rank-record-page .rank-record .rank-list .rank-item .content.center {
-  flex: 0 0 30%;
-  text-align: left;
-  color: #f94f57;
+  flex: 0 0 50%;
 }
 .rank-record-page .rank-record .rank-list .rank-item .content.right {
-  flex: 0 0 20%;
+  flex: 0 0 50%;
   text-align: right;
-}
-.rank-record-page .rank-record .rank-list .rank-item .avatar {
-  float: left;
-  display: block;
-  width: 1.068rem;
-  height: 1.068rem;
-  margin-right: 0.267rem;
-  border-radius: 50%;
-  background-color: #032258;
-  overflow: hidden;
 }
 .rank-record-page .rank-record .empty {
   position: absolute;
@@ -622,7 +677,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 2.67rem;
+  width: 3.3375rem;
   height: 0.4272rem;
   margin: auto;
   font-size: 0.4005rem;
